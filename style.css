@@ -1,0 +1,946 @@
+ :root{
+    --MinSwing: -5deg;
+    --MaxSwing: 5deg;
+    --MinRotate: -6deg;
+    --MaxRotate: 6deg;
+    --DebugColor: ;
+    --MinIconSwing: -1.45deg;
+    --MaxIconSwing: 1.45deg;
+ }
+/*---------------------------- 1ST Section ----------------------------*/
+ @font-face {
+    font-family:'LEMONMILK';
+    src: url(Fonts/LEMONMILK-Regular.ttf) format('truetype');
+  }
+
+  @font-face {
+    font-family: 'AvenirLight';
+    src: url(Fonts/FontsFree-Net-Avenir-Light.ttf) format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'TheBoldFont';
+    src: url(Fonts/THEBOLDFONT.ttf) format('truetype');
+  }
+
+  *{
+    margin: 0;
+    padding: 0;
+  }
+
+  a{
+    z-index: 5;
+  }
+
+  html {
+    scroll-behavior: smooth;
+
+  }
+
+  .AnimatedBlob{
+    position: absolute;
+    bottom: -45vh;
+    animation: BigBlob 90s ease-in-out infinite alternate-reverse ;
+  }
+
+  .AnimatedBlob2{
+    position: absolute;
+    bottom: -250vh;
+    animation: SmallBlob 30s ease-in-out infinite alternate-reverse ;
+  }
+
+  @keyframes BigBlob {
+    0%   {transform: translate(0, 0);}
+    50%  {transform: translate(90vh, 300vh);}
+    100% {transform: translate(50vw, 0vw);}
+  }
+
+  @keyframes SmallBlob {
+    0%   {transform: translate(0, 0);}
+    50%  {transform: translate(1000px, 600px);}
+    100% {transform: translate(1400px, 500px);}
+  }
+
+  header{
+    max-width: 100px;
+  }
+
+  .GradientBackroundB{
+    background-image: radial-gradient( black 90% ,rgb(70, 31, 19) );
+    background-attachment: fixed;
+    overflow-x: hidden;
+  }
+
+  main{
+    /* border: solid red; */
+    width: 100%;
+    height: 100%;
+    transition: all 1s ease-in-out;
+
+  }
+
+.MainContainer{
+  position: relative;
+  height: 54.3vh;
+  width: 100%;
+  /* border:solid white; */
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  margin-bottom: 50vh;
+  opacity: 0;
+}
+
+.ButtonContainer{
+  position: relative;
+  /* border: solid cyan; */
+  height: 65vh;
+  width: fit-content;
+  margin: 0.77vw;
+  display: flex;
+  align-items:end;
+  justify-content:space-around;
+  transform-origin: top center;
+  overflow: hidden;
+  z-index: 20;
+}
+
+.FallContainer{
+  /* border: solid blue; */
+  width: 100%;
+  position: absolute; 
+  top: 0vh;
+  animation: Fall 2s ease-in-out;
+  opacity: 0;
+  z-index: 0;
+}
+
+#MyName{
+  /* border: solid green; */
+  overflow: hidden;
+  position:absolute;
+  z-index: 0;
+  cursor: default;
+  width: fit-content;
+  opacity: 1;
+  left: 40vw;
+  animation: Swing 2s ease-in-out infinite alternate-reverse;
+}
+
+.Button{
+  /* border: solid red; */
+  text-align: center;
+  background:transparent;
+  color: white;
+  border: none;
+  height: 8.8vh;
+  width: 11.5vw;
+  font-size: 1.8vw;
+  cursor: pointer;
+  font-family:'LEMONMILK';
+  z-index: 3;
+}
+
+.String{
+  background-color: rgb(163, 163, 163);
+  height: 70.6vh;
+  width: 2px;
+  position: absolute;
+  top: -5vw;
+  z-index: 1;
+}
+
+.A{
+  height: 18.1vh;
+  left: 4.5vw;
+}
+
+.B{
+  height: 18.1vh; 
+  left: 1vw
+}
+
+.StringBlocker{
+  position: absolute;
+  height: 5.4vh;
+  width: 11.5vw;
+  background-color: black;
+  z-index: 2;
+}
+
+.ButtonContainerEffectA{
+  animation: Swing 2s ease-in-out infinite alternate-reverse;
+}
+
+.ButtonContainerEffectB{
+  animation: Swing 2s ease-in-out -1s infinite alternate-reverse;
+  top: 7vh;
+}
+
+.ButtonContainerEffectC{
+  animation: Swing 2s ease-in-out -1.9s infinite alternate-reverse;
+  top: -3.5vh;
+}
+
+.IconContainerEffectA{
+  animation: IconSwing 2s ease-in-out -4.65s infinite alternate-reverse, IconDrop 4.3s ease-in-out ;
+}
+
+.IconContainerEffectB{
+  animation: IconSwing 2s ease-in-out -3s infinite alternate-reverse, IconDrop 3.9s ease-in-out;
+  top: 7vh;
+}
+
+.IconContainerEffectC{
+  animation: IconSwing 2s ease-in-out -6.3s infinite alternate-reverse, IconDrop 4.7s ease-in-out;
+  top: -3.5vh;
+}
+
+.ButtonEffectA{
+  animation: Rotate 1.9s ease-in-out infinite alternate;
+}
+
+.ButtonEffectB{
+  animation: Rotate 2s ease-in-out -1s infinite alternate-reverse;
+}
+
+.ButtonEffectC{
+  animation: Rotate 1.9s ease-in-out -1.9s infinite alternate;
+}
+
+.Icon{
+  position:relative;
+  fill: white;
+  border: 1px solid white;
+  border-radius: 10%;
+  cursor: pointer;
+  margin-right: 0.5vw;
+  z-index: 3;
+}
+
+.ListContainer{
+  position: absolute;
+  top: -0.8vh;
+  display: flex;
+  /* border: solid violet; */
+  width: 5.5vw;
+}
+
+.IconContainer{
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  /* border: solid red; */
+  height: 10vh;
+  transform-origin: top center;
+  /* overflow: hidden; */
+}
+
+.ContactContainer{
+  position: fixed;
+  right: 0;
+  top: 0;
+  /* border: solid red; */
+  width: 5.5vw;
+  height: 10vh;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  transform-origin: top center;
+  overflow: hidden;
+}
+
+.ContactButton, .submit{
+  background-image: linear-gradient(45deg, rgba(234,110,72,1) 0%, rgba(188,26,99,1) 100%);
+  width: 5.3vw;
+  height: 3.8vh;
+  border-radius: 1.1vh;
+  border: none;
+  color: white;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  letter-spacing: 0.13em;
+  cursor: pointer;
+  font-size: 0.95em;
+  transition: text-shadow 0.3s ease-in-out;
+  z-index: 3;
+}
+
+.ContactButton:hover, .MoreButton:hover, .submit:hover, .LessButton:hover {
+  text-shadow: 0px 0px 0.5em white,0px 0px 0.5em white;
+}
+
+@keyframes Swing {
+  0%   {transform: rotate(var(--MinSwing));}
+  100% {transform: rotate(var(--MaxSwing));}
+}
+
+@keyframes IconSwing {
+  0%   {transform: rotate(var(--MinIconSwing));}
+  100% {transform: rotate(var(--MaxIconSwing));}
+}
+
+@keyframes Rotate {
+  0%   {transform: rotate(var(--MinRotate));}
+  100% {transform: rotate(var(--MaxRotate));}
+}
+
+@keyframes Drop {
+  0%   {opacity: 1; transform: translateY(-900px);}
+  80%  {opacity: 1;transform: translateY(50px);}
+  100% {opacity: 1;transform: translateY(0px);}
+}
+
+@keyframes IconDrop {
+  0%   {transform: translateY(-500px);}
+  100% {transform: translateY(0px);}
+}
+
+@keyframes Fall {
+  0%   {opacity: 1; transform: translateY(-60vh);}
+  42%  {opacity: 1; transform: translateY(0px);}
+  70%  {opacity: 1; transform: translateY(0px);}
+  100% {transform: translateY(90vh);}
+  /* 0%   {transform: translateY(-900px);opacity: 1;transform: rotate(var(--MinSwing));}
+  40%  {opacity: 1;transform: translateY(0px);transform: rotate(var(--MaxSwing));}
+  100% {transform: translateY(1000px);} */
+}
+
+/*---------------------------- 1ST Section ----------------------------*/
+
+/*---------------------------- 2ND Section ----------------------------*/
+
+.About{
+  /* border:solid green; */
+  /* background-color: rgb(44, 44, 44); */
+  height: 30vh;
+  width: 75%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-bottom: 65vh;
+
+}
+
+#Secondary{
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  height: 60%;
+  width: 50%;
+  /* border: solid burlywood; */
+  /* letter-spacing: 0.1em; */
+  font-family: 'AvenirLight';
+  color: rgb(209, 209, 209);
+  position: relative;
+  text-align: center;
+  font-size:1.2rem;
+  font-weight: 600;
+  transition: all 1s ease-in-out;
+}
+
+.LessButton{
+  position: relative;
+  background-image: linear-gradient(45deg, rgba(234,110,72,1) 0%, rgba(188,26,99,1) 100%);
+  border-radius: 1.1vh;
+  border: none;
+  color: white;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  letter-spacing: 0.13em;
+  cursor: auto;
+  font-size: 0.95em;
+  transition: all 0.3s ease-in-out;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  z-index: 5;
+  opacity: 0;
+}
+
+.MoreButton{
+  position: relative;
+  background-image: linear-gradient(45deg, rgba(234,110,72,1) 0%, rgba(188,26,99,1) 100%);
+  border-radius: 1.1vh;
+  border: none;
+  color: white;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  letter-spacing: 0.13em;
+  cursor:pointer ;
+  font-size: 0.95em;
+  transition: all 0.3s ease-in-out;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  opacity: 0;
+  z-index: 5;
+}
+
+#Secondary #AboutText1{
+  transition: all 0.5s;  
+  opacity: 1;
+  position: absolute;
+  transform: translateY(-23%);
+  z-index: 2;
+}
+
+#Secondary #AboutText2{
+  transition: all 0.5s;  
+  opacity: 0;
+  position: absolute;
+  transform: translateY(-23%);
+  z-index: 1;
+  }
+
+.Head{
+  /* border: solid red; */
+  font-size: 14.5rem;
+  font-family: 'TheBoldFont';
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.123);
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.About .show {
+  opacity: 1;
+  transform: translateX(20vw);
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+.Projects .show {
+  opacity: 1;
+  transform: translateX(-25vw);
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+#SPCH {
+  transition:color 0.5s ease-in-out;
+}
+
+#Secondary:hover #SPCH {
+  background-image: linear-gradient(45deg, rgba(234,110,72,1) 0%, rgba(188,26,99,1) 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/*---------------------------- 2ND Section ----------------------------*/
+
+/*---------------------------- 3RD Section ----------------------------*/
+
+
+.Projects{
+  /* border:solid green; */
+  /* background-color: rgb(44, 44, 44); */
+  height: 30vh;
+  width: 100%;
+  display: flex;
+  justify-content:end;
+  align-items: center;
+  margin-bottom: 3vh;
+  overflow: hidden;
+}
+
+.Projects .Head{
+  /* border: solid blue; */
+  /* font-size: 14em; */
+  font-family: 'TheBoldFont';
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.123);
+  position: relative;
+  right:-20vw ;
+}
+
+.ProjectContainer{
+  /* border: solid green; */
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50vh;
+}
+
+.Paper1, .Paper2{
+  background-color: #eeeeff;
+  height: 90vh;
+  width: 32vw;
+  border-radius: 3px;
+  box-shadow: 2px 2px 69px -9px rgba(0,0,0,0.47);
+  transition: rotate 0.5s ease-in-out;
+}
+
+.Paper_Phone{
+  background-color: #eeeeff;
+  border-radius: 3px;
+  box-shadow: 2px 2px 69px -9px rgba(0,0,0,0.47);
+  transition: rotate 0.5s ease-in-out;
+  display: grid;
+  height: 0px;
+  width: 0px;
+  font-size: 0%; 
+}
+
+.Paper_Phone h1{
+  font-size: 0%;
+}
+
+.Paper1{
+  rotate: -2deg;
+  display: grid;
+}
+
+.Paper1:hover img{
+  right: -2.5vw;
+  bottom: 10.5vh
+}
+
+img{
+  position: absolute;
+  bottom: 10vh;
+  right: -3vw;
+  width: 60%;
+  height: auto;
+  rotate: -20deg;
+  opacity:  10%;
+  transition: all 0.5s ease-in-out;
+}
+
+.Paper2{
+  rotate: 1deg;
+}
+
+.Paper1 > div{
+  margin-bottom: 0px;
+}
+
+.YellowPaper{
+  background-color: #e8ce9a;
+  height: 95vh;
+  width: 74vw;
+  border-radius: 3px;
+  box-shadow: inset 12px 12px 34px -19px rgba(0,0,0,0.78);
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.YellowPaper:hover >div{
+  rotate: 0deg;
+}
+
+.FolderPart{
+  background-color: #e8ce9a;
+  width: 5vw;
+  height: 45vh;
+  border-radius: 30px 12px 12px 12px;
+  position: absolute;
+  margin-right: 75%;
+  margin-top: 50vh;  
+
+}
+
+.Title {
+  display: flex;
+  align-items: top;
+  justify-content:space-between;
+}
+
+.Middle{
+/* background-color: green; */
+padding-bottom: 300px;
+}
+
+.End{
+/* background-color: purple; */
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+li{
+  list-style-type: none;
+  font-family:'AvenirLight' ;
+  font-weight: 600;
+  margin-left: 30px;
+}
+
+h2, h1{
+  margin-bottom:30px ;
+  margin-top: 30px;
+  margin-left: 10px;
+  font-family: 'Theboldfont';
+  color: #b30000;
+}
+
+h1{
+  color:black;
+  font-size: xxx-large;
+}
+
+.Tech svg{
+  fill: #b30000;
+}
+
+.Paper1 button, .Paper_Phone button{
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  letter-spacing: 0.13em;
+  cursor: pointer;
+  font-size: 1.2em;
+  background-color: transparent;
+  border: 2px solid black;
+  margin: 20px;
+  border-radius: 2vh;
+  padding: 10px;
+  transition: all 0.5s ease-in-out;
+}
+
+.Paper1 button:hover, .Paper_Phone button:hover{
+  background-color: #404040;
+  color: white;
+  border: 2px solid white;
+}
+
+/*---------------------------- 3RD Section ----------------------------*/
+
+/*---------------------------- 4TH Section ----------------------------*/
+
+.Contact{
+  /* border: solid green; */
+  height: 30vh;
+  width: 100%;
+  margin-bottom: 3vh;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.Contact .Head{
+  /* border: solid blue; */
+  /* font-size: 14em; */
+  font-family: 'TheBoldFont';
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.123);
+  position: relative;
+  left: -10vw;
+}
+
+.Contact .show {
+  opacity: 1;
+  transform: translateX(19vw);
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+.contactSection{
+  display: flex;
+  /* border: solid green; */
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.inputwrapper{
+  /* border: solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+}
+
+#name, #email{
+  width: 15vw;
+  height: 2em;
+}
+
+#message,#name, #email{
+  background-color: #4b4b4bb4;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  font-family: 'AvenirLight';
+  margin-top: 10px;
+  font-size: 1em;
+}
+
+#name{
+  margin-right: 20px;
+}
+
+::placeholder{
+  color: white;
+  opacity: 40%;
+}
+
+#name:focus, #message:focus, #email:focus{
+  outline: 2px solid white;
+  background-color:#4d4d4de5 ;
+}
+
+textarea{
+  width: 31vw;
+  height: 4em;
+}
+
+.mago{
+  /* border: solid blue; */
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+label{
+  display:flex;
+  flex-direction:column;
+  color: white;
+  font-family:'AvenirLight';
+  letter-spacing: 0.13em;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+  position: relative;
+}
+
+.blob{
+  background-image: linear-gradient(45deg, rgba(234,110,72,1) 0%, rgba(188,26,99,1) 100%);
+  width: 20vw;
+  height: 40vh;
+  border-radius: 81% 19% 85% 15% / 8% 78% 22% 92% ;
+  animation: Blob 3s ease-in-out infinite alternate-reverse;
+  /* margin-left: 15vw; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.blob > h1{
+  opacity: 0;
+  transition: all .5s ease-in-out;
+}
+
+.blob > p{
+  font-family: 'AvenirLight';
+  color: white;
+  position: relative;
+  text-align: center;
+  font-size:1.2em;
+  font-weight: 600;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  transition: all .5s ease-in-out;
+}
+
+@keyframes Blob {
+  0%   {border-radius: 55% 45% 55% 45% / 22% 58% 42% 78%;}
+  100% {border-radius: 65% 35% 47% 53% / 34% 65% 35% 66%;}
+}
+
+@keyframes rotate {
+  0%   {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
+}
+
+/*---------------------------- 4TH Section ----------------------------*/
+/*---------------------------- Media Queries ----------------------------*/
+
+@media screen and (max-width: 992px) {
+/*---------------------------- START Section ----------------------------*/
+
+:root{
+  --MinSwing: -2deg;
+  --MaxSwing: 2deg;
+  --MinRotate: -3deg;
+  --MaxRotate: 3deg;
+  
+}
+
+.ContactContainer{
+  right: 8px;
+  width: fit-content;
+}
+
+.ContactButton, .submit{
+  width: 80px;
+}
+
+.B{
+  transform: translateX(200%);
+  left: 55px;
+}
+
+.ButtonContainer{
+  width: fit-content;
+}
+
+.Button{
+  width: fit-content;
+  font-size: 1rem;
+}
+
+/*---------------------------- START Section ----------------------------*/
+/*---------------------------- ABOUT Section ----------------------------*/
+
+.About .Head{
+  font-size: 6rem;
+  margin-bottom: 0px;
+  position: relative;
+  right: 20px;
+}
+
+  .About .show {
+  opacity: 1;
+  transform: translateX(10vw);
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+  
+.About{
+  height: 500px;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 35vh;
+
+}
+
+#Secondary{
+  height: 50%;
+  width: 100%;
+}
+
+#Secondary #AboutText1{
+  margin-bottom: 20px;
+}
+
+#Secondary #AboutText2{
+  margin-bottom: 20px;
+  }
+
+.MoreButton{
+  opacity: 1;
+}
+
+/*---------------------------- ABOUT Section ----------------------------*/
+/*---------------------------- PROJECTS Section ----------------------------*/
+
+.ProjectContainer{
+  margin-bottom: 30vh;
+  height: 1200px;
+}
+
+.Paper_Phone{
+  height: 500px;
+  width: 280px;
+  font-size: 1rem; 
+  margin-top: 40px;
+}
+
+.Paper_Phone h1{
+  font-size: 2rem;
+}
+
+.Projects .show {
+  transform: translateX(-19.5vw);
+}
+
+.YellowPaper{
+  height: 1050px;
+  width: 320px;
+  flex-direction: column;
+}
+
+.Paper1{
+  rotate: 0deg;
+  height: 500px;
+  width: 280px;
+}
+
+.Paper2{
+  rotate: 0deg;
+  width: 0px;
+  height: 0px;
+}
+
+.Paper2 h1{
+  font-size: 0%;
+}
+
+.FolderPart{
+  visibility: hidden;
+}
+
+h1{
+  font-size: 2rem;
+}
+
+.Middle{
+  padding-bottom: 0px;
+}
+
+h2{
+    margin-bottom:0px ;
+}
+
+/*---------------------------- PROJECTS Section ----------------------------*/
+/*---------------------------- CONTACT Section ----------------------------*/
+
+.Head{
+  font-size:450%;
+}
+
+.Contact .Head{
+  left: -20vw;
+}
+
+.blob{
+  width: 250px;
+  height: 250px;
+  margin-top: 30px;
+}
+
+.contactSection{
+  width: 100%;
+  height: fit-content;
+  flex-direction: column-reverse;
+}
+
+.blob > p{
+  font-size:1em;
+  margin-bottom: -50px;
+  margin-top: -50px;
+}
+
+.inputwrapper{
+  flex-direction: column;
+  width: 100%;
+}
+
+.mago{
+  width: 100%;
+}
+
+textarea{
+  width: 340px;
+}
+
+#name, #email{
+  width: 160px;
+}
+
+/*---------------------------- CONTACT Section ----------------------------*/
+
+.AnimatedBlob{
+  animation: none;
+  visibility: hidden;
+}
+
+.AnimatedBlob2{
+  animation: none;
+  visibility: hidden;
+}
+
+}
