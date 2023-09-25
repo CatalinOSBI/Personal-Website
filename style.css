@@ -57,7 +57,7 @@
 
   @keyframes SmallBlob {
     0%   {transform: translate(0, 0);}
-    50%  {transform: translate(1000px, 601px);}
+    50%  {transform: translate(1000px, 600px);}
     100% {transform: translate(1400px, 500px);}
   }
 
