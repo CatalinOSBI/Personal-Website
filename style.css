@@ -503,9 +503,12 @@ img{
   right: -3vw;
   width: 60%;
   height: auto;
-  rotate: -20deg;
-  opacity:  10%;
+  rotate: 10deg;
+  opacity:  1;
   transition: all 0.5s ease-in-out;
+  border: 8px solid black;
+  border-bottom: 32px solid black;
+  z-index: -1;
 }
 
 .Paper2{
@@ -883,6 +886,10 @@ h1{
 
 h2{
     margin-bottom:0px ;
+}
+
+img{
+  width: 50%;
 }
 
 /*---------------------------- PROJECTS Section ----------------------------*/
