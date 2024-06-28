@@ -1,89 +1,99 @@
- :root{
-    --MinSwing: -5deg;
-    --MaxSwing: 5deg;
-    --MinRotate: -6deg;
-    --MaxRotate: 6deg;
-    --DebugColor: ;
-    --MinIconSwing: -1.45deg;
-    --MaxIconSwing: 1.45deg;
- }
+:root {
+  --MinSwing: -5deg;
+  --MaxSwing: 5deg;
+  --MinRotate: -6deg;
+  --MaxRotate: 6deg;
+  --DebugColor: ;
+  --MinIconSwing: -1.45deg;
+  --MaxIconSwing: 1.45deg;
+}
 /*---------------------------- 1ST Section ----------------------------*/
- @font-face {
-    font-family:'LEMONMILK';
-    src: url(Fonts/LEMONMILK-Regular.ttf) format('truetype');
+@font-face {
+  font-family: "LEMONMILK";
+  src: url(Fonts/LEMONMILK-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "AvenirLight";
+  src: url(Fonts/FontsFree-Net-Avenir-Light.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "TheBoldFont";
+  src: url(Fonts/THEBOLDFONT.ttf) format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  z-index: 5;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.AnimatedBlob {
+  position: absolute;
+  bottom: -45vh;
+  animation: BigBlob 90s ease-in-out infinite alternate-reverse;
+}
+
+.AnimatedBlob2 {
+  position: absolute;
+  bottom: -250vh;
+  animation: SmallBlob 30s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes BigBlob {
+  0% {
+    transform: translate(0, 0);
   }
-
-  @font-face {
-    font-family: 'AvenirLight';
-    src: url(Fonts/FontsFree-Net-Avenir-Light.ttf) format('truetype');
+  50% {
+    transform: translate(90vh, 300vh);
   }
-  
-  @font-face {
-    font-family: 'TheBoldFont';
-    src: url(Fonts/THEBOLDFONT.ttf) format('truetype');
+  100% {
+    transform: translate(50vw, 0vw);
   }
+}
 
-  *{
-    margin: 0;
-    padding: 0;
+@keyframes SmallBlob {
+  0% {
+    transform: translate(0, 0);
   }
-
-  a{
-    z-index: 5;
+  50% {
+    transform: translate(1000px, 600px);
   }
-
-  html {
-    scroll-behavior: smooth;
-
+  100% {
+    transform: translate(1400px, 500px);
   }
+}
 
-  .AnimatedBlob{
-    position: absolute;
-    bottom: -45vh;
-    animation: BigBlob 90s ease-in-out infinite alternate-reverse ;
-  }
+header {
+  max-width: 100px;
+}
 
-  .AnimatedBlob2{
-    position: absolute;
-    bottom: -250vh;
-    animation: SmallBlob 30s ease-in-out infinite alternate-reverse ;
-  }
+.GradientBackroundB {
+  background-image: radial-gradient(black 90%, rgb(70, 31, 19));
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
 
-  @keyframes BigBlob {
-    0%   {transform: translate(0, 0);}
-    50%  {transform: translate(90vh, 300vh);}
-    100% {transform: translate(50vw, 0vw);}
-  }
+main {
+  /* border: solid red; */
+  width: 100%;
+  height: 100%;
+  transition: all 1s ease-in-out;
+}
 
-  @keyframes SmallBlob {
-    0%   {transform: translate(0, 0);}
-    50%  {transform: translate(1000px, 600px);}
-    100% {transform: translate(1400px, 500px);}
-  }
-
-  header{
-    max-width: 100px;
-  }
-
-  .GradientBackroundB{
-    background-image: radial-gradient( black 90% ,rgb(70, 31, 19) );
-    background-attachment: fixed;
-    overflow-x: hidden;
-  }
-
-  main{
-    /* border: solid red; */
-    width: 100%;
-    height: 100%;
-    transition: all 1s ease-in-out;
-
-  }
-
-.MainContainer{
+.MainContainer {
   position: relative;
   height: 54.3vh;
   width: 100%;
-  /* border:solid white; */
+  /* border:solid red; */
   display: flex;
   justify-content: center;
   align-items: end;
@@ -91,34 +101,34 @@
   opacity: 0;
 }
 
-.ButtonContainer{
+.ButtonContainer {
   position: relative;
   /* border: solid cyan; */
   height: 65vh;
   width: fit-content;
   margin: 0.77vw;
   display: flex;
-  align-items:end;
-  justify-content:space-around;
+  align-items: end;
+  justify-content: space-around;
   transform-origin: top center;
   overflow: hidden;
   z-index: 20;
 }
 
-.FallContainer{
+.FallContainer {
   /* border: solid blue; */
   width: 100%;
-  position: absolute; 
+  position: absolute;
   top: 0vh;
   animation: Fall 2s ease-in-out;
   opacity: 0;
   z-index: 0;
 }
 
-#MyName{
+#MyName {
   /* border: solid green; */
   overflow: hidden;
-  position:absolute;
+  position: absolute;
   z-index: 0;
   cursor: default;
   width: fit-content;
@@ -127,40 +137,29 @@
   animation: Swing 2s ease-in-out infinite alternate-reverse;
 }
 
-.Button{
+.Button {
   /* border: solid red; */
   text-align: center;
-  background:transparent;
+  background: transparent;
   color: white;
   border: none;
   height: 8.8vh;
   width: 11.5vw;
   font-size: 1.8vw;
   cursor: pointer;
-  font-family:'LEMONMILK';
+  font-family: "LEMONMILK";
   z-index: 3;
 }
 
-.String{
+.String {
   background-color: rgb(163, 163, 163);
   height: 70.6vh;
   width: 2px;
   position: absolute;
-  top: -5vw;
   z-index: 1;
 }
 
-.A{
-  height: 18.1vh;
-  left: 4.5vw;
-}
-
-.B{
-  height: 18.1vh; 
-  left: 1vw
-}
-
-.StringBlocker{
+.StringBlocker {
   position: absolute;
   height: 5.4vh;
   width: 11.5vw;
@@ -168,48 +167,51 @@
   z-index: 2;
 }
 
-.ButtonContainerEffectA{
+.ButtonContainerEffectA {
   animation: Swing 2s ease-in-out infinite alternate-reverse;
 }
 
-.ButtonContainerEffectB{
+.ButtonContainerEffectB {
   animation: Swing 2s ease-in-out -1s infinite alternate-reverse;
   top: 7vh;
 }
 
-.ButtonContainerEffectC{
+.ButtonContainerEffectC {
   animation: Swing 2s ease-in-out -1.9s infinite alternate-reverse;
   top: -3.5vh;
 }
 
-.IconContainerEffectA{
-  animation: IconSwing 2s ease-in-out -4.65s infinite alternate-reverse, IconDrop 4.3s ease-in-out ;
+.IconContainerEffectA {
+  animation: IconSwing 2s ease-in-out -4.65s infinite alternate-reverse,
+    IconDrop 4.3s ease-in-out;
 }
 
-.IconContainerEffectB{
-  animation: IconSwing 2s ease-in-out -3s infinite alternate-reverse, IconDrop 3.9s ease-in-out;
+.IconContainerEffectB {
+  animation: IconSwing 2s ease-in-out -3s infinite alternate-reverse,
+    IconDrop 3.9s ease-in-out;
   top: 7vh;
 }
 
-.IconContainerEffectC{
-  animation: IconSwing 2s ease-in-out -6.3s infinite alternate-reverse, IconDrop 4.7s ease-in-out;
+.IconContainerEffectC {
+  animation: IconSwing 2s ease-in-out -6.3s infinite alternate-reverse,
+    IconDrop 4.7s ease-in-out;
   top: -3.5vh;
 }
 
-.ButtonEffectA{
+.ButtonEffectA {
   animation: Rotate 1.9s ease-in-out infinite alternate;
 }
 
-.ButtonEffectB{
+.ButtonEffectB {
   animation: Rotate 2s ease-in-out -1s infinite alternate-reverse;
 }
 
-.ButtonEffectC{
+.ButtonEffectC {
   animation: Rotate 1.9s ease-in-out -1.9s infinite alternate;
 }
 
-.Icon{
-  position:relative;
+.Icon {
+  position: relative;
   fill: white;
   border: 1px solid white;
   border-radius: 10%;
@@ -218,7 +220,7 @@
   z-index: 3;
 }
 
-.ListContainer{
+.ListContainer {
   position: absolute;
   top: -0.8vh;
   display: flex;
@@ -226,7 +228,7 @@
   width: 5.5vw;
 }
 
-.IconContainer{
+.IconContainer {
   display: flex;
   align-items: end;
   justify-content: center;
@@ -236,28 +238,32 @@
   /* overflow: hidden; */
 }
 
-.ContactContainer{
+.ContactContainer {
   position: fixed;
+  align-items: center;
+  justify-content: space-around;
   right: 0;
   top: 0;
-  /* border: solid red; */
-  width: 5.5vw;
+  width: 124px;
   height: 10vh;
   display: flex;
-  align-items: end;
-  justify-content: center;
   transform-origin: top center;
   overflow: hidden;
 }
 
-.ContactButton, .submit{
-  background-image: linear-gradient(45deg, rgba(234,110,72,1) 0%, rgba(188,26,99,1) 100%);
+.ContactButton,
+.submit {
+  background-image: linear-gradient(
+    45deg,
+    rgba(234, 110, 72, 1) 0%,
+    rgba(188, 26, 99, 1) 100%
+  );
   width: 5.3vw;
   height: 3.8vh;
   border-radius: 1.1vh;
   border: none;
   color: white;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   letter-spacing: 0.13em;
   cursor: pointer;
   font-size: 0.95em;
@@ -265,41 +271,90 @@
   z-index: 3;
 }
 
-.ContactButton:hover, .MoreButton:hover, .submit:hover, .LessButton:hover {
-  text-shadow: 0px 0px 0.5em white,0px 0px 0.5em white;
+.ContactButton {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ContactButton:hover,
+.MoreButton:hover,
+.submit:hover,
+.LessButton:hover {
+  text-shadow: 0px 0px 0.5em white, 0px 0px 0.5em white;
 }
 
 @keyframes Swing {
-  0%   {transform: rotate(var(--MinSwing));}
-  100% {transform: rotate(var(--MaxSwing));}
+  0% {
+    transform: rotate(var(--MinSwing));
+  }
+  100% {
+    transform: rotate(var(--MaxSwing));
+  }
 }
 
 @keyframes IconSwing {
-  0%   {transform: rotate(var(--MinIconSwing));}
-  100% {transform: rotate(var(--MaxIconSwing));}
+  0% {
+    transform: rotate(var(--MinIconSwing));
+  }
+  100% {
+    transform: rotate(var(--MaxIconSwing));
+  }
 }
 
 @keyframes Rotate {
-  0%   {transform: rotate(var(--MinRotate));}
-  100% {transform: rotate(var(--MaxRotate));}
+  0% {
+    transform: rotate(var(--MinRotate));
+  }
+  100% {
+    transform: rotate(var(--MaxRotate));
+  }
 }
 
 @keyframes Drop {
-  0%   {opacity: 1; transform: translateY(-900px);}
-  80%  {opacity: 1;transform: translateY(50px);}
-  100% {opacity: 1;transform: translateY(0px);}
+  0% {
+    opacity: 1;
+    transform: translateY(-900px);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
 
 @keyframes IconDrop {
-  0%   {transform: translateY(-500px);}
-  100% {transform: translateY(0px);}
+  0% {
+    transform: translateY(-500px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 @keyframes Fall {
-  0%   {opacity: 1; transform: translateY(-60vh);}
-  42%  {opacity: 1; transform: translateY(0px);}
-  70%  {opacity: 1; transform: translateY(0px);}
-  100% {transform: translateY(90vh);}
+  0% {
+    opacity: 1;
+    transform: translateY(-60vh);
+  }
+  42% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(90vh);
+  }
   /* 0%   {transform: translateY(-900px);opacity: 1;transform: rotate(var(--MinSwing));}
   40%  {opacity: 1;transform: translateY(0px);transform: rotate(var(--MaxSwing));}
   100% {transform: translateY(1000px);} */
@@ -309,7 +364,7 @@
 
 /*---------------------------- 2ND Section ----------------------------*/
 
-.About{
+.About {
   /* border:solid green; */
   /* background-color: rgb(44, 44, 44); */
   height: 30vh;
@@ -318,33 +373,47 @@
   justify-content: end;
   align-items: center;
   margin-bottom: 65vh;
-
 }
 
-#Secondary{
+#Secondary {
   display: flex;
+  flex-direction: column;
   align-items: end;
-  justify-content: space-between;
+  justify-content: flex-end;
   height: 60%;
   width: 50%;
   /* border: solid burlywood; */
   /* letter-spacing: 0.1em; */
-  font-family: 'AvenirLight';
+  font-family: "AvenirLight";
   color: rgb(209, 209, 209);
   position: relative;
   text-align: center;
-  font-size:1.2rem;
+  font-size: 1.2rem;
   font-weight: 600;
   transition: all 1s ease-in-out;
+  min-width: 600px;
 }
 
-.LessButton{
+.AboutButtonContainer {
+  position: absolute;
+  display: flex;
+  /* border: solid red; */
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: -4%;
+}
+
+.LessButton {
   position: relative;
-  background-image: linear-gradient(45deg, rgba(234,110,72,1) 0%, rgba(188,26,99,1) 100%);
+  background-image: linear-gradient(
+    45deg,
+    rgba(234, 110, 72, 1) 0%,
+    rgba(188, 26, 99, 1) 100%
+  );
   border-radius: 1.1vh;
   border: none;
   color: white;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   letter-spacing: 0.13em;
   cursor: auto;
   font-size: 0.95em;
@@ -357,15 +426,19 @@
   opacity: 0;
 }
 
-.MoreButton{
+.MoreButton {
   position: relative;
-  background-image: linear-gradient(45deg, rgba(234,110,72,1) 0%, rgba(188,26,99,1) 100%);
+  background-image: linear-gradient(
+    45deg,
+    rgba(234, 110, 72, 1) 0%,
+    rgba(188, 26, 99, 1) 100%
+  );
   border-radius: 1.1vh;
   border: none;
   color: white;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   letter-spacing: 0.13em;
-  cursor:pointer ;
+  cursor: pointer;
   font-size: 0.95em;
   transition: all 0.3s ease-in-out;
   padding-right: 20px;
@@ -376,26 +449,29 @@
   z-index: 5;
 }
 
-#Secondary #AboutText1{
-  transition: all 0.5s;  
+#Secondary #AboutText1 {
+  transition: all 0.5s;
   opacity: 1;
-  position: absolute;
+  position: relative;
   transform: translateY(-23%);
   z-index: 2;
+  /* border: solid blue; */
+  width: 100%;
 }
 
-#Secondary #AboutText2{
-  transition: all 0.5s;  
+#Secondary #AboutText2 {
+  transition: all 0.5s;
   opacity: 0;
   position: absolute;
   transform: translateY(-23%);
   z-index: 1;
-  }
+  /* border: solid blueviolet; */
+}
 
-.Head{
+.Head {
   /* border: solid red; */
   font-size: 14.5rem;
-  font-family: 'TheBoldFont';
+  font-family: "TheBoldFont";
   letter-spacing: 0.1em;
   color: rgba(255, 255, 255, 0.123);
 }
@@ -417,11 +493,15 @@
 }
 
 #SPCH {
-  transition:color 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out;
 }
 
 #Secondary:hover #SPCH {
-  background-image: linear-gradient(45deg, rgba(234,110,72,1) 0%, rgba(188,26,99,1) 100%);
+  background-image: linear-gradient(
+    45deg,
+    rgba(234, 110, 72, 1) 0%,
+    rgba(188, 26, 99, 1) 100%
+  );
   -webkit-background-clip: text;
   color: transparent;
 }
@@ -430,30 +510,29 @@
 
 /*---------------------------- 3RD Section ----------------------------*/
 
-
-.Projects{
+.Projects {
   /* border:solid green; */
   /* background-color: rgb(44, 44, 44); */
   height: 30vh;
   width: 100%;
   display: flex;
-  justify-content:end;
+  justify-content: end;
   align-items: center;
   margin-bottom: 3vh;
   overflow: hidden;
 }
 
-.Projects .Head{
+.Projects .Head {
   /* border: solid blue; */
   /* font-size: 14em; */
-  font-family: 'TheBoldFont';
+  font-family: "TheBoldFont";
   letter-spacing: 0.1em;
   color: rgba(255, 255, 255, 0.123);
   position: relative;
-  right:-20vw ;
+  right: -20vw;
 }
 
-.ProjectContainer{
+.ProjectContainer {
   /* border: solid green; */
   width: 100%;
   height: 100vh;
@@ -463,133 +542,178 @@
   margin-bottom: 50vh;
 }
 
-.Paper1, .Paper2{
+.Paper1,
+.Paper2 {
   background-color: #eeeeff;
-  height: 90vh;
-  width: 32vw;
+  height: 92%;
+  width: 45%;
   border-radius: 3px;
-  box-shadow: 2px 2px 69px -9px rgba(0,0,0,0.47);
+  box-shadow: 2px 2px 69px -9px rgba(0, 0, 0, 0.47);
   transition: rotate 0.5s ease-in-out;
 }
 
-.Paper_Phone{
+.Paper_Phone {
   background-color: #eeeeff;
   border-radius: 3px;
-  box-shadow: 2px 2px 69px -9px rgba(0,0,0,0.47);
+  box-shadow: 2px 2px 69px -9px rgba(0, 0, 0, 0.47);
   transition: rotate 0.5s ease-in-out;
-  display: grid;
-  height: 0px;
-  width: 0px;
-  font-size: 0%; 
+  font-size: 0%;
+  display: none;
 }
 
-.Paper_Phone h1{
+.Paper_Phone h1 {
   font-size: 0%;
 }
 
-.Paper1{
+.Paper1 {
   rotate: -2deg;
   display: grid;
 }
 
-.Paper1:hover img{
-  right: -2.5vw;
-  bottom: 10.5vh
-}
-
-img{
+img {
   position: absolute;
   bottom: 10vh;
-  right: -3vw;
   width: 60%;
   height: auto;
-  rotate: 10deg;
-  opacity:  1;
+  opacity: 1;
   transition: all 0.5s ease-in-out;
   border: 8px solid black;
   border-bottom: 32px solid black;
   z-index: -1;
 }
 
-.Paper2{
-  rotate: 1deg;
+.Paper1:hover img {
+  right: -2.5vw;
+  bottom: 10.5vh;
 }
 
-.Paper1 > div{
+.Paper2:hover img {
+  left: -2.5vw;
+  bottom: 10.5vh;
+}
+
+.Paper1 img{
+  right: -3vw;
+  rotate: 10deg;
+  z-index: 100;
+}
+
+.Paper2 img {
+  left: -3vw;
+  rotate: -10deg;
+  z-index: 10;
+}
+
+.Paper2 {
+  rotate: 1deg;
+  display: grid;
+}
+
+.Paper1 > div {
   margin-bottom: 0px;
 }
 
-.YellowPaper{
+.YellowPaper {
   background-color: #e8ce9a;
-  height: 95vh;
-  width: 74vw;
+  height: 98%;
+  width: 70%;
+  min-width: 900px;
   border-radius: 3px;
-  box-shadow: inset 12px 12px 34px -19px rgba(0,0,0,0.78);
+  box-shadow: inset 12px 12px 34px -19px rgba(0, 0, 0, 0.78);
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.YellowPaper:hover >div{
+.YellowPaper:hover > div {
   rotate: 0deg;
 }
 
-.FolderPart{
+.FolderPart {
+  width: 6%;
+  height: 46%;
   background-color: #e8ce9a;
-  width: 5vw;
-  height: 45vh;
-  border-radius: 30px 12px 12px 12px;
   position: absolute;
-  margin-right: 75%;
-  margin-top: 50vh;  
-
+  bottom: 0;
+  left: 0;
+  border-radius: 30px 12px 12px 12px;
+  transform: translateX(-80%);
 }
 
 .Title {
   display: flex;
   align-items: top;
-  justify-content:space-between;
+  justify-content: space-between;
 }
 
-.Middle{
-/* background-color: green; */
-padding-bottom: 300px;
+.Paper2 .Title{
+  justify-content: flex-end;
 }
 
-.End{
-/* background-color: purple; */
-display: flex;
-align-items: center;
-justify-content: center;
+.Middle {
+  /* background-color: green; */
+  padding-bottom: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
-li{
+.Paper2 .Middle{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.End {
+  /* background-color: purple; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+li {
   list-style-type: none;
-  font-family:'AvenirLight' ;
+  font-family: "AvenirLight";
   font-weight: 600;
   margin-left: 30px;
 }
 
-h2, h1{
-  margin-bottom:30px ;
+.Paper2 li{
+  margin-right: 30px;
+  text-align: end;
+}
+
+h2,
+h1 {
+  margin-bottom: 30px;
   margin-top: 30px;
   margin-left: 10px;
-  font-family: 'Theboldfont';
+  font-family: "Theboldfont";
   color: #b30000;
 }
 
-h1{
-  color:black;
-  font-size: xxx-large;
+.Paper2 h1,
+h2 {
+  margin-right: 10px;
 }
 
-.Tech svg{
-  fill: #b30000;
+h1 {
+  color: black;
+  font-size: 2.8rem;
 }
 
-.Paper1 button, .Paper_Phone button{
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+.Tech svg {
+  fill: #960101;
+  width: 24px;
+}
+
+.Paper1 button,
+.Paper2 button,
+.Paper_Phone button {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   letter-spacing: 0.13em;
   cursor: pointer;
   font-size: 1.2em;
@@ -601,7 +725,9 @@ h1{
   transition: all 0.5s ease-in-out;
 }
 
-.Paper1 button:hover, .Paper_Phone button:hover{
+.Paper1 button:hover,
+.Paper2 button:hover,
+.Paper_Phone button:hover {
   background-color: #404040;
   color: white;
   border: 2px solid white;
@@ -611,7 +737,7 @@ h1{
 
 /*---------------------------- 4TH Section ----------------------------*/
 
-.Contact{
+.Contact {
   /* border: solid green; */
   height: 30vh;
   width: 100%;
@@ -621,10 +747,10 @@ h1{
   justify-content: start;
 }
 
-.Contact .Head{
+.Contact .Head {
   /* border: solid blue; */
   /* font-size: 14em; */
-  font-family: 'TheBoldFont';
+  font-family: "TheBoldFont";
   letter-spacing: 0.1em;
   color: rgba(255, 255, 255, 0.123);
   position: relative;
@@ -637,7 +763,7 @@ h1{
   transition: transform 1s ease-in-out, opacity 1s ease-in-out;
 }
 
-.contactSection{
+.contactSection {
   display: flex;
   /* border: solid green; */
   width: 100%;
@@ -647,7 +773,7 @@ h1{
   justify-content: space-evenly;
 }
 
-.inputwrapper{
+.inputwrapper {
   /* border: solid red; */
   display: flex;
   align-items: center;
@@ -655,52 +781,57 @@ h1{
   flex-direction: column;
 }
 
-#name, #email{
+#name,
+#email {
   width: 15vw;
   height: 2em;
 }
 
-#message,#name, #email{
+#message {
+  width: 32vw;
+}
+
+#message,
+#name,
+#email {
   background-color: #4b4b4bb4;
   border: none;
   color: white;
   border-radius: 5px;
-  font-family: 'AvenirLight';
+  font-family: "AvenirLight";
   margin-top: 10px;
   font-size: 1em;
 }
 
-#name{
-  margin-right: 20px;
-}
-
-::placeholder{
+::placeholder {
   color: white;
   opacity: 40%;
 }
 
-#name:focus, #message:focus, #email:focus{
+#name:focus,
+#message:focus,
+#email:focus {
   outline: 2px solid white;
-  background-color:#4d4d4de5 ;
+  background-color: #4d4d4de5;
 }
 
-textarea{
+textarea {
   width: 31vw;
   height: 4em;
 }
 
-.mago{
+.mago {
   /* border: solid blue; */
   display: flex;
   margin-bottom: 20px;
   justify-content: center;
 }
 
-label{
-  display:flex;
-  flex-direction:column;
+label {
+  display: flex;
+  flex-direction: column;
   color: white;
-  font-family:'AvenirLight';
+  font-family: "AvenirLight";
   letter-spacing: 0.13em;
   cursor: pointer;
   font-size: 1em;
@@ -708,11 +839,15 @@ label{
   position: relative;
 }
 
-.blob{
-  background-image: linear-gradient(45deg, rgba(234,110,72,1) 0%, rgba(188,26,99,1) 100%);
-  width: 20vw;
-  height: 40vh;
-  border-radius: 81% 19% 85% 15% / 8% 78% 22% 92% ;
+.blob {
+  background-image: linear-gradient(
+    45deg,
+    rgba(234, 110, 72, 1) 0%,
+    rgba(188, 26, 99, 1) 100%
+  );
+  width: fit-content;
+  height: fit-content;
+  border-radius: 81% 19% 85% 15% / 8% 78% 22% 92%;
   animation: Blob 3s ease-in-out infinite alternate-reverse;
   /* margin-left: 15vw; */
   display: flex;
@@ -721,233 +856,337 @@ label{
   flex-direction: column;
 }
 
-.blob > h1{
+.blob > h1 {
   opacity: 0;
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
-.blob > p{
-  font-family: 'AvenirLight';
+.blob > p {
+  font-family: "AvenirLight";
   color: white;
   position: relative;
   text-align: center;
-  font-size:1.2em;
+  font-size: 1.2em;
   font-weight: 600;
   margin-bottom: 40px;
   margin-top: 40px;
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 @keyframes Blob {
-  0%   {border-radius: 55% 45% 55% 45% / 22% 58% 42% 78%;}
-  100% {border-radius: 65% 35% 47% 53% / 34% 65% 35% 66%;}
+  0% {
+    border-radius: 55% 45% 55% 45% / 22% 58% 42% 78%;
+  }
+  100% {
+    border-radius: 65% 35% 47% 53% / 34% 65% 35% 66%;
+  }
 }
 
 @keyframes rotate {
-  0%   {transform: rotate(0deg);}
-  100% {transform: rotate(360deg);}
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /*---------------------------- 4TH Section ----------------------------*/
 /*---------------------------- Media Queries ----------------------------*/
 
-@media screen and (max-width: 992px) {
-/*---------------------------- START Section ----------------------------*/
+@media screen and (max-width: 600px) {
+  /*---------------------------- START Section ----------------------------*/
 
-:root{
-  --MinSwing: -2deg;
-  --MaxSwing: 2deg;
-  --MinRotate: -3deg;
-  --MaxRotate: 3deg;
-  
-}
-
-.ContactContainer{
-  right: 8px;
-  width: fit-content;
-}
-
-.ContactButton, .submit{
-  width: 80px;
-}
-
-.B{
-  transform: translateX(200%);
-  left: 55px;
-}
-
-.ButtonContainer{
-  width: fit-content;
-}
-
-.Button{
-  width: fit-content;
-  font-size: 1rem;
-}
-
-/*---------------------------- START Section ----------------------------*/
-/*---------------------------- ABOUT Section ----------------------------*/
-
-.About .Head{
-  font-size: 6rem;
-  margin-bottom: 0px;
-  position: relative;
-  right: 20px;
-}
-
-  .About .show {
-  opacity: 1;
-  transform: translateX(10vw);
-  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
-}
-  
-.About{
-  height: 500px;
-  width: 100%;
-  justify-content: center;
-  flex-direction: column;
-  margin-bottom: 35vh;
-
-}
-
-#Secondary{
-  height: 50%;
-  width: 100%;
-}
-
-#Secondary #AboutText1{
-  margin-bottom: 20px;
-}
-
-#Secondary #AboutText2{
-  margin-bottom: 20px;
+  :root {
+    --MinSwing: -2deg;
+    --MaxSwing: 2deg;
+    --MinRotate: -3deg;
+    --MaxRotate: 3deg;
   }
 
-.MoreButton{
-  opacity: 1;
+  .AnimatedBlob {
+    animation: none;
+    visibility: hidden;
+  }
+
+  .AnimatedBlob2 {
+    animation: none;
+    visibility: hidden;
+  }
+
+  .ButtonContainer {
+    scale: 1.4;
+  }
+
+  .ContactContainer {
+    width: 20%;
+  }
+
+  .submit {
+    width: 80px;
+  }
+
+  .ButtonContainer {
+    width: fit-content;
+  }
+
+  .Button {
+    width: fit-content;
+    font-size: 1rem;
+  }
+
+  /*---------------------------- START Section ----------------------------*/
+  /*---------------------------- ABOUT Section ----------------------------*/
+
+  .About .Head {
+    font-size: 6rem;
+    margin-bottom: 0px;
+    position: relative;
+    right: 20px;
+  }
+
+  .About .show {
+    opacity: 1;
+    transform: translateX(10vw);
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+  }
+
+  .About {
+    height: 500px;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 35vh;
+  }
+
+  #Secondary {
+    height: 50%;
+    width: 100%;
+    min-width: 0px;
+    justify-content: flex-start;
+  }
+
+  .MoreButton {
+    opacity: 1;
+  }
+
+  .AboutButtonContainer {
+    position: relative;
+    margin-top: 10%;
+  }
+
+  /*---------------------------- ABOUT Section ----------------------------*/
+  /*---------------------------- PROJECTS Section ----------------------------*/
+
+  .ProjectContainer {
+    margin-bottom: 30vh;
+    height: 1200px;
+  }
+
+  .Paper_Phone {
+    height: 500px;
+    width: 85%;
+    font-size: 1rem;
+    margin-top: 40px;
+    display: grid;
+  }
+
+  .Paper_Phone h1 {
+    font-size: 2rem;
+  }
+
+  .Projects .show {
+    transform: translateX(-19.5vw);
+  }
+
+  .YellowPaper {
+    height: fit-content;
+    width: 88%;
+    flex-direction: column;
+    min-width: 0px;
+  }
+
+  .Paper1 {
+    rotate: 0deg;
+    height: fit-content;
+    width: 85%;
+  }
+
+  .Paper2 {
+    display: none;
+  }
+
+  .Paper2 h1 {
+    font-size: 0%;
+  }
+
+  .FolderPart {
+    visibility: hidden;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .Middle {
+    padding-bottom: 0px;
+  }
+
+  h2 {
+    margin-bottom: 0px;
+  }
+
+  img {
+    width: 50%;
+  }
+
+  /*---------------------------- PROJECTS Section ----------------------------*/
+  /*---------------------------- CONTACT Section ----------------------------*/
+
+  .Head {
+    font-size: 450%;
+  }
+
+  .Contact .Head {
+    left: -20vw;
+  }
+
+  .blob {
+    width: 250px;
+    height: 250px;
+    margin-top: 30px;
+  }
+
+  .contactSection {
+    width: 100%;
+    height: fit-content;
+    flex-direction: column-reverse;
+  }
+
+  .blob > p {
+    font-size: 1em;
+    margin-bottom: -50px;
+    margin-top: -50px;
+  }
+
+  .inputwrapper {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .mago {
+    width: 100%;
+  }
+
+  #message {
+    width: 92vw;
+  }
+
+  #name,
+  #email {
+    width: 45vw;
+  }
+
+  /*---------------------------- CONTACT Section ----------------------------*/
 }
 
-/*---------------------------- ABOUT Section ----------------------------*/
-/*---------------------------- PROJECTS Section ----------------------------*/
+@media only screen and (min-device-width: 768px) and (max-device-width: 1366px) {
+  :root {
+    --MinSwing: -2deg;
+    --MaxSwing: 2deg;
+    --MinRotate: -3deg;
+    --MaxRotate: 3deg;
+  }
 
-.ProjectContainer{
-  margin-bottom: 30vh;
-  height: 1200px;
+  .End {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .ButtonContainer {
+    scale: 1.3;
+  }
+
+  .Contact .Head {
+    font-size: 9.5rem;
+  }
+
+  .Contact {
+    height: fit-content;
+    margin-bottom: 8vh;
+  }
+
+  #name,
+  #email {
+    width: 25vw;
+  }
+
+  #message {
+    width: 52vw;
+  }
+
+  .Projects .Head {
+    font-size: 8.5rem;
+  }
+
+  .Projects {
+    height: fit-content;
+    margin-bottom: 0px;
+  }
+
+  .About .Head {
+    font-size: 10rem;
+    position: absolute;
+  }
+
+  .About .show {
+    opacity: 1;
+    transform: translateX(vw);
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+  }
+
+  .About {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  #Secondary {
+    height: 50%;
+    width: 100%;
+    min-width: 0px;
+    justify-content: flex-end;
+    align-self: flex-end;
+  }
+
+  .MoreButton {
+    opacity: 1;
+  }
+
+  .YellowPaper {
+    min-width: 0px;
+    width: 90%;
+    height: 75%;
+  }
+
+  .blob {
+    width: 40%;
+  }
+
+  .AnimatedBlob {
+    animation: none;
+    visibility: hidden;
+  }
+
+  .AnimatedBlob2 {
+    animation: none;
+    visibility: hidden;
+  }
 }
 
-.Paper_Phone{
-  height: 500px;
-  width: 280px;
-  font-size: 1rem; 
-  margin-top: 40px;
-}
-
-.Paper_Phone h1{
-  font-size: 2rem;
-}
-
-.Projects .show {
-  transform: translateX(-19.5vw);
-}
-
-.YellowPaper{
-  height: 1050px;
-  width: 320px;
-  flex-direction: column;
-}
-
-.Paper1{
-  rotate: 0deg;
-  height: 500px;
-  width: 280px;
-}
-
-.Paper2{
-  rotate: 0deg;
-  width: 0px;
-  height: 0px;
-}
-
-.Paper2 h1{
-  font-size: 0%;
-}
-
-.FolderPart{
-  visibility: hidden;
-}
-
-h1{
-  font-size: 2rem;
-}
-
-.Middle{
-  padding-bottom: 0px;
-}
-
-h2{
-    margin-bottom:0px ;
-}
-
-img{
-  width: 50%;
-}
-
-/*---------------------------- PROJECTS Section ----------------------------*/
-/*---------------------------- CONTACT Section ----------------------------*/
-
-.Head{
-  font-size:450%;
-}
-
-.Contact .Head{
-  left: -20vw;
-}
-
-.blob{
-  width: 250px;
-  height: 250px;
-  margin-top: 30px;
-}
-
-.contactSection{
-  width: 100%;
-  height: fit-content;
-  flex-direction: column-reverse;
-}
-
-.blob > p{
-  font-size:1em;
-  margin-bottom: -50px;
-  margin-top: -50px;
-}
-
-.inputwrapper{
-  flex-direction: column;
-  width: 100%;
-}
-
-.mago{
-  width: 100%;
-}
-
-textarea{
-  width: 340px;
-}
-
-#name, #email{
-  width: 160px;
-}
-
-/*---------------------------- CONTACT Section ----------------------------*/
-
-.AnimatedBlob{
-  animation: none;
-  visibility: hidden;
-}
-
-.AnimatedBlob2{
-  animation: none;
-  visibility: hidden;
-}
-
+@media only screen and (min-device-width: 768px) and (max-device-width: 1366px) and (orientation: landscape) {
+  .YellowPaper {
+    height: 100%;
+  }
 }

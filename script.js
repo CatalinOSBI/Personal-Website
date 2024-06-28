@@ -106,6 +106,6 @@ function sendEmail(){
 }
 
 setTimeout(() => {
-    document.getElementById("MainContainer").style.opacity = 1;document.getElementById("MainContainer").style.opacity = 1;
+    document.getElementById("MainContainer").style.opacity = 1
     console.log("Delayed for 2.9 seconds.");
   }, 2900);
