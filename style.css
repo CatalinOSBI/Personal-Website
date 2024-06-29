@@ -579,7 +579,6 @@ img {
   transition: all 0.5s ease-in-out;
   border: 8px solid black;
   border-bottom: 32px solid black;
-  z-index: -1;
 }
 
 .Paper1:hover img {
@@ -592,7 +591,8 @@ img {
   bottom: 10.5vh;
 }
 
-.Paper1 img{
+.Paper1 img,
+.Paper_Phone img{
   right: -3vw;
   rotate: 10deg;
   z-index: 100;
@@ -984,7 +984,7 @@ label {
   }
 
   .Paper_Phone {
-    height: 500px;
+    height: fit-content;
     width: 85%;
     font-size: 1rem;
     margin-top: 40px;
@@ -1099,10 +1099,10 @@ label {
   }
 
   .End {
+    width: 100%;
     position: absolute;
     bottom: 0;
     display: flex;
-    justify-content: space-between;
   }
 
   .ButtonContainer {
