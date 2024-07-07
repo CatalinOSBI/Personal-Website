@@ -76,7 +76,7 @@ header {
   max-width: 100px;
 }
 
-.GradientBackroundB {
+body{
   background-image: radial-gradient(black 90%, rgb(70, 31, 19));
   background-attachment: fixed;
   overflow-x: hidden;
@@ -87,6 +87,10 @@ main {
   width: 100%;
   height: 100%;
   transition: all 1s ease-in-out;
+}
+
+a{
+  all: unset ;
 }
 
 .MainContainer {
@@ -492,11 +496,11 @@ main {
   transition: transform 1s ease-in-out, opacity 1s ease-in-out;
 }
 
-#SPCH {
+.SPCH {
   transition: color 0.5s ease-in-out;
 }
 
-#Secondary:hover #SPCH {
+#Secondary:hover .SPCH {
   background-image: linear-gradient(
     45deg,
     rgba(234, 110, 72, 1) 0%,
