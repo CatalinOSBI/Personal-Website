@@ -675,7 +675,9 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
 }
 
 li {
@@ -726,7 +728,7 @@ h1 {
   margin: 20px;
   border-radius: 2vh;
   padding: 8px;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.18s ease-in-out;
 }
 
 .Paper1 button:hover,
@@ -1036,6 +1038,11 @@ label {
     padding-bottom: 0px;
   }
 
+  .End{
+    /* background-color: red; */
+    position: relative;
+  }
+
   h2 {
     margin-bottom: 0px;
   }
@@ -1103,6 +1110,7 @@ label {
   }
 
   .End {
+    /* background-color: blue; */
     width: 100%;
     position: absolute;
     bottom: 0;
